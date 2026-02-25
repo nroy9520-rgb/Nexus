@@ -1,0 +1,274 @@
+:root {
+  --bg: #060b17;
+  --bg-soft: #0d1528;
+  --card: rgba(17, 27, 48, 0.65);
+  --text: #eff6ff;
+  --muted: #b8c4de;
+  --blue: #40a9ff;
+  --lime: #b8ff4a;
+  --border: rgba(145, 175, 255, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 20% 10%, #0c2044 0, transparent 34%),
+    radial-gradient(circle at 80% 16%, #12380f 0, transparent 27%), var(--bg);
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  mask-image: radial-gradient(circle at center, black 30%, transparent 95%);
+  z-index: -2;
+}
+
+.bg-orb {
+  position: fixed;
+  width: 420px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  filter: blur(110px);
+  z-index: -1;
+  opacity: 0.55;
+}
+
+.orb-1 {
+  top: -140px;
+  left: -70px;
+  background: var(--blue);
+}
+
+.orb-2 {
+  bottom: -210px;
+  right: -30px;
+  background: var(--lime);
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.25rem;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  font-size: 1.15rem;
+}
+
+.chip {
+  border: 1px solid var(--border);
+  background: rgba(9, 17, 35, 0.75);
+  color: var(--muted);
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.45rem 0.9rem;
+}
+
+main {
+  padding-bottom: 4rem;
+}
+
+section {
+  margin-top: 5.5rem;
+}
+
+.hero {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--lime);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.77rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.08;
+}
+
+h1 {
+  margin-top: 1rem;
+  font-size: clamp(2.2rem, 7.2vw, 4.6rem);
+  max-width: 13ch;
+  margin-inline: auto;
+}
+
+.subhead,
+.section-subhead {
+  color: var(--muted);
+  max-width: 76ch;
+  margin: 1.1rem auto 0;
+  line-height: 1.6;
+}
+
+.cta-group {
+  display: flex;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  border-radius: 12px;
+  padding: 0.82rem 1.3rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  color: #021224;
+  background: linear-gradient(120deg, var(--blue), #89ccff);
+  box-shadow: 0 12px 30px rgba(53, 140, 255, 0.35);
+}
+
+.btn-secondary {
+  color: var(--text);
+  border-color: var(--border);
+  background: rgba(14, 24, 45, 0.82);
+}
+
+h2 {
+  text-align: center;
+  font-size: clamp(1.55rem, 4vw, 2.25rem);
+}
+
+.pain-grid {
+  margin-top: 1.8rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.card,
+.bento-card {
+  border: 1px solid var(--border);
+  background: var(--card);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 1.25rem;
+}
+
+.card h3,
+.bento-card h3 {
+  font-size: 1.12rem;
+}
+
+.card p,
+.bento-card p {
+  margin: 0.6rem 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.logo-marquee {
+  margin-top: 1.6rem;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(14, 22, 39, 0.68);
+  overflow: hidden;
+  padding: 0.65rem 0;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 0.9rem;
+  animation: scroll 23s linear infinite;
+  padding-inline: 0.9rem;
+}
+
+.logo-pill {
+  white-space: nowrap;
+  color: #f8fbff;
+  border: 1px solid rgba(188, 216, 255, 0.38);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
+  border-radius: 999px;
+  padding: 0.52rem 0.88rem;
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  box-shadow: inset 0 0 22px rgba(115, 176, 255, 0.15), 0 0 18px rgba(66, 175, 255, 0.16);
+}
+
+.bento-grid {
+  margin-top: 1.8rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.bento-card {
+  min-height: 190px;
+}
+
+.bento-card.large {
+  min-height: 230px;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 950px) {
+  .pain-grid,
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    text-align: left;
+  }
+
+  h1,
+  .subhead,
+  .cta-group,
+  h2,
+  .section-subhead {
+    margin-inline: 0;
+    text-align: left;
+  }
+
+  .cta-group {
+    justify-content: flex-start;
+  }
+}
